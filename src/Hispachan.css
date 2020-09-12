@@ -1,0 +1,580 @@
+/*
+ * Estilo Hispachan
+ *
+ * Porteado manualmente desde hispachan.org
+ */
+/*
+ * Hispachan Files
+ */
+#mainMenu {
+  background: #bd0003; }
+  #mainMenu .item, #mainMenu i {
+    color: #FFF9C4; }
+  #mainMenu input {
+    color: rgba(255, 249, 196, 0.9); }
+    #mainMenu input::-webkit-input-placeholder {
+      color: #FFF9C4;
+      opacity: 0.5; }
+    #mainMenu input:-moz-placeholder {
+      color: #FFF9C4;
+      opacity: 0.5; }
+    #mainMenu input::-moz-placeholder {
+      color: #FFF9C4;
+      opacity: 0.5; }
+    #mainMenu input:-ms-input-placeholder {
+      color: #FFF9C4;
+      opacity: 0.5; }
+
+#nprogress .bar {
+  background: #FFF9C4 !important; }
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #FFF9C4, 0 0 5px #FFF9C4 !important; }
+
+#nprogress .spinner-icon {
+  display: none; }
+
+body {
+  font: Segoe UI, sans-serif; }
+  body .pusher {
+    background: #ffffee !important; }
+
+h1, h2, h3, h4, h5 {
+  font-weight: 100; }
+
+#mainContent {
+  padding-top: 64px; }
+
+.turbolinks-progress-bar {
+  visibility: hidden; }
+
+.ui.segment {
+  color: #111; }
+
+#footer {
+  margin-top: 2em;
+  margin-bottom: 2em; }
+
+#threadSearch {
+  width: 390px; }
+
+/** Vue.js Cloaking **/
+[v-cloak], .v-loading {
+  display: none; }
+
+.v-loading[v-cloak] {
+  display: block !important; }
+
+.ui.secondary.pointing.menu .item {
+  border-color: #800000 !important;
+  color: #800000 !important; }
+
+.ui.progress .label {
+  color: #800000 !important; }
+
+#searchResults .item .content .header, #searchResults .item .content .description {
+  color: #800000; }
+
+#searchResults .item .content .meta {
+  color: rgba(128, 0, 0, 0.9) !important; }
+
+#searchResults .item .content .extra {
+  color: rgba(128, 0, 0, 0.5) !important; }
+
+.ui.attached.menu {
+  border: none !important; }
+
+#navbar {
+  background: #F2E1D6;
+  color: #a60000; }
+
+#navbar a {
+  color: #e04000; }
+
+/*
+ *  Porteado desde https://www.hispachan.org/css/img_global.css
+ */
+form {
+  margin-bottom: 0px; }
+  form .trap {
+    display: none; }
+
+blockquote blockquote {
+  margin-left: 0em; }
+
+blockquote.reply, blockquote.postblock, blockquote.replyhl, blockquote.diverror, blockquote.divban, blockquote:last-child {
+  margin-bottom: 0em; }
+
+.thumb {
+  border: none;
+  float: left;
+  margin-top: 2px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  max-height: 250px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px; }
+
+.reply .filesize, .postblock .filesize, .replyhl .filesize, .diverror .filesize, .divban .filesize {
+  margin-left: 20px; }
+
+.replypage .replylink {
+  display: none; }
+
+.pagelist {
+  max-width: 600px; }
+
+.spoiler {
+  color: #424242;
+  background-color: #424242;
+  border-radius: 2px; }
+  .spoiler a, .spoiler a:link, .spoiler a:visited, .spoiler a:active, .spoiler span {
+    text-decoration: none;
+    color: #424242 !important; }
+
+.spoiler:hover {
+  text-decoration: none;
+  color: white !important; }
+
+.extrabtns {
+  vertical-align: middle; }
+
+/*
+.hidethread {
+    background: transparent url('./icons/blue/icons.png') -32px -16px no-repeat;
+}
+.unhidethread {
+    background: transparent url('./icons/blue/icons.png') -48px 0px no-repeat;
+}
+.expandthread {
+    background: transparent url('./icons/blue/icons.gif') 0px -16px no-repeat;
+}
+
+.reflinkpreview {
+    position: absolute;
+    padding: 5px;
+    background-color: #F0E0D6;
+    border-radius: 4px;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    z-index: 20000;
+    blockquote { padding-left: 3em; }
+    .hideshow, [title^="Buscar"], [title^="Ampliar"] {
+        display: none;
+    }
+}
+*/
+.highlight blockquote {
+  margin-bottom: 0 !important; }
+
+.highlight .filesize {
+  margin-left: 20px !important; }
+
+.replybacklinks {
+  font-family: sans-serif;
+  text-decoration: none; }
+
+.bandera {
+  margin-right: 1px; }
+
+.code {
+  overflow: auto;
+  padding: 10px !important;
+  max-width: 102% !important;
+  max-height: 400px;
+  font-family: monospace;
+  word-wrap: normal;
+  white-space: pre-wrap;
+  overflow-x: hidden;
+  font-size: 120%;
+  margin-top: 10px;
+  margin-bottom: -5px; }
+
+@media only screen and (max-width: 720px) {
+  .code {
+    max-height: 300px; } }
+
+body .hispaspoiler .thumb, body .hispaspoiler .cellcatalog img, body .hispaspoiler img[src*="/banners/"] {
+  opacity: 0.02;
+  filter: blur(5px); }
+
+body .hispaspoiler .thumb[style^="max-"] {
+  opacity: 1 !important;
+  filter: blur(0px) !important; }
+
+.MathJax, .MathJax:active {
+  display: inline-table !important; }
+
+.timer {
+  font-size: 90%;
+  cursor: pointer; }
+
+.ref-futura {
+  pointer-events: none;
+  opacity: .7; }
+
+html, body {
+  background: #ffffee;
+  color: #800000; }
+  html #hispaBox, body #hispaBox {
+    font-family: sans-serif;
+    font-size: 90%;
+    line-height: 130%;
+    max-width: 1280px;
+    margin: 0 auto 0 auto; }
+
+a {
+  color: #e04000;
+  text-decoration: none; }
+  a.reflink {
+    font-weight: bold; }
+  a:hover {
+    color: #1f8f2a; }
+
+.logo {
+  clear: both;
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  font-size: 220%;
+  font-weight: bold;
+  line-height: 120%;
+  color: #e04000;
+  width: 100%; }
+
+.replymode, .catalogmode {
+  background: #bd0003;
+  color: #FFF9C4;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 120%;
+  width: 100%;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px; }
+
+.reply, .postblock, .replyhl, .diverror, .divban, .cellcatalog, .numeros {
+  background: #F2E1D6;
+  color: #a60000;
+  padding: 5px;
+  border: 1px solid #DDBEAB;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  margin: 2px; }
+
+table {
+  margin: 4px;
+  border-collapse: separate; }
+
+.postblock {
+  text-align: center;
+  font-weight: bold; }
+
+.unkfunc {
+  background: inherit;
+  color: #1A7D24; }
+
+.filesize {
+  text-decoration: none; }
+
+.filetitle {
+  background: inherit;
+  color: #a60000;
+  font-weight: bold; }
+
+.postername, .postertrip {
+  color: #1f8f2a; }
+
+.postername {
+  font-weight: bold; }
+
+.omittedposts {
+  color: #AB5C5C; }
+
+.replyhl {
+  color: #800000; }
+
+.doubledash {
+  vertical-align: top;
+  clear: both;
+  float: left; }
+
+.thumbnailmsg {
+  font-size: small;
+  color: #800000; }
+
+.abbrev {
+  color: #9C4040;
+  padding-top: 20px; }
+
+.highlight {
+  background: #F0D1BD;
+  color: #4F2C2C;
+  border: 1px solid #B3917B;
+  padding: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px; }
+
+.reflinkpreview {
+  background-color: #ffffee;
+  border: 1px solid #DDBEAB; }
+
+hr {
+  height: 1px;
+  color: #C4A38E;
+  background-color: #C4A38E;
+  border: none; }
+
+.code {
+  background: #F4E9E1;
+  border: 1px solid #C6865E; }
+
+.doubledash {
+  color: #CE7C7C; }
+
+.diverror {
+  line-height: 130%;
+  padding: 15px; }
+
+.divban {
+  text-align: center;
+  padding: 20px 20px 22px 20px;
+  margin: 4px auto;
+  margin-top: -20px;
+  max-width: 800px; }
+
+.divboardphp {
+  font-family: sans-serif;
+  font-size: 140%;
+  line-height: 130%;
+  padding-top: 10px; }
+
+.redtext {
+  background: inherit;
+  color: #E0727F; }
+
+/*
+@import url("https://www.hispachan.org/css/hispachancodeclaro.css");
+
+
+
+.postlists {
+	background:#FFFFFF;
+	width:100%;
+	padding:0px;
+	color:#800000;
+}
+
+.replytitle {
+	font-size:1.2em;
+	color:#CC1105;
+	font-weight:800;
+}
+.commentpostername {
+	color:#FFFFFF;
+	font-weight:800;
+}
+
+.reporte {
+	text-align:right;
+	border:1px solid #DDBEAB;
+	background:#F2E1D6;
+	padding:8px;
+	margin-bottom:5px;
+	border-radius:5px;
+}
+
+.barra {
+	font-size:120%;
+	line-height:140%;
+	border:1px solid #DDBEAB;
+	background:#F7E8DF;
+	padding:5px;
+	border-radius:5px;
+}
+
+*/
+.replybacklinks {
+  font-size: 85%; }
+
+.replybacklinks a {
+  margin-right: 5px; }
+
+.ui.popup {
+  background-color: #F2E1D6;
+  border-color: #DDBEAB;
+  color: #a60000;
+  border-radius: 4px; }
+
+#pcscrollTop, #pcscrollBottom {
+  background-color: #F2E1D6;
+  border: 1px solid #DDBEAB; }
+
+#pcscrollTop {
+  position: fixed;
+  width: 22px;
+  height: 18px;
+  padding: 2px 0;
+  margin: 0;
+  top: 53px;
+  right: 8px;
+  cursor: pointer;
+  text-align: center;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  z-index: 100; }
+
+#pcscrollBottom {
+  position: fixed;
+  width: 22px;
+  height: 18px;
+  padding: 2px 0;
+  margin: 0;
+  top: 81px;
+  right: 8px;
+  cursor: pointer;
+  text-align: center;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  z-index: 100; }
+
+.badge {
+  display: inline-block;
+  font-size: 80%;
+  font-weight: 400;
+  background: #1f8f2a;
+  color: #f8f6da;
+  padding: 2px 5px;
+  margin-left: 5px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  border-radius: 4px; }
+
+.anonid {
+  display: inline-block;
+  font-size: 80%;
+  font-weight: 400;
+  padding: 2px 5px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-shadow: 1px 1px black;
+  color: white; }
+
+/*
+ *  Porteado desde https://www.hispachan.org/css/hispamovil.css
+ */
+.mvisible {
+  display: none !important; }
+
+@media only screen and (max-width: 720px) {
+  blockquote, .omittedposts, .postername, .filetitle, .cellcatalog, .botones,
+  .reporte, .boton_post, #bgl_ml {
+    font-size: 110%; }
+  blockquote, .filetitle {
+    line-height: 125%; }
+  .reflink, .responder {
+    font-size: 115%; }
+  .reflinkposition {
+    margin-top: -10px; }
+  .responder {
+    margin-top: -8px; }
+  .filenamereply {
+    margin-left: -15px !important; }
+  .nombrefile {
+    word-wrap: break-word;
+    max-width: 90%; }
+  .numeros {
+    font-size: 125% !important; }
+  .logo {
+    font-size: 160% !important; }
+  .largrep {
+    max-width: 125px !important; }
+  /*
+    [id^="embed"] {
+        position: relative;
+        padding: { bottom: 56.25%; top: 30px; }
+        height: 0;
+        overflow: hidden;
+        iframe, object, embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    }
+*/
+  table[align="center"] td {
+    display: inline-block;
+    width: 90% !important; }
+  table {
+    width: 100%;
+    display: grid;
+    display: -moz-grid;
+    display: -webkit-grid;
+    display: -ms-grid;
+    display: -o-grid;
+    margin-right: 8px; }
+  .doubledash, .navbar, .adminbar, #posttypeindicator, .moculto {
+    display: none !important; }
+  .mvisible {
+    display: block !important; }
+  .thumb {
+    max-height: 250px;
+    max-width: 35%;
+    height: auto;
+    margin-left: 5px !important;
+    margin-right: 2px;
+    margin-top: 3px;
+    margin-bottom: 3px; } }
+
+@media only screen and (max-width: 360px) {
+  blockquote {
+    margin-top: 1.4em;
+    margin-left: 0; } }
+
+/*
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?-10f2fc');
+    src: url('fonts/icomoon.eot?#iefix-10f2fc') format('embedded-opentype'),url('fonts/icomoon.woff?-10f2fc') format('woff'),url('fonts/icomoon.ttf?-10f2fc') format('truetype'),url('fonts/icomoon.svg?-10f2fc#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"],[class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-hispa8bit:before {
+    content: "\e600";
+}
+
+[onclick^="embed"] {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+}
+*/
+
+/*# sourceMappingURL=Hispachan.css.map */
