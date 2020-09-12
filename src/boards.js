@@ -3,7 +3,6 @@
  *
  * Tablones reconocidos por HispachanFiles
  */
-'use strict';
 
 const boards = [
     [
@@ -198,7 +197,7 @@ const boards = [
             title: 'Chicas Sexy Venezuela',
         },
     ],
-];
+]
 
 const boardsFlat = boards.reduce((acc, cur) => [...acc, ...cur])
 const allowList = boardsFlat.map(x => x.board)
@@ -206,7 +205,7 @@ const boardsMap = boardsFlat.reduce((acc, curr) => {
     return { ...acc, [curr.board]: { title: curr.title } }
 }, {})
 
-module.exports = {
+export {
     boards,
     allowList,
     boardsMap,

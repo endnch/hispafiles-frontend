@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 
 import NotFound from '../NotFound'
 
-import boards from '../boards'
+import { boards } from '../boards'
 
 const Boards = () => {
     const { board } = useParams()
