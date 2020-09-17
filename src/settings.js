@@ -8,5 +8,6 @@ export default {
     },
     misc: {
         email: 'zeta@pagalacoca.com',
-    }
+    },
+    defaultStyle: 'Hispachan',
 }

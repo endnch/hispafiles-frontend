@@ -20,7 +20,7 @@ const Post = React.forwardRef(({ thread, post, backlinks, activePosts, setActive
                 )</span>
             </span>
             <br />
-            <a target='_blank' rel="noopener noreferrer" href={ `/${post.file.url}` }>
+            <a target='_blank' rel="noopener noreferrer" href={ `${settings.site.url}/${post.file.url}` }>
                 <span id={ `thumb${post.postId}` }>
                     <img className='thumb' src={ `${settings.site.url}/${post.file.thumb}` } alt={ post.postId }></img>
                 </span>
@@ -32,7 +32,7 @@ const Post = React.forwardRef(({ thread, post, backlinks, activePosts, setActive
             { post.dado && <>
                 <font color='red'>
                     <img src={ `${settings.site.url}/images/dado.png` } alt='' />
-                    &nbsp;=
+                    &nbsp;{'= '}
                     <b>{ post.dado }</b>
                 </font>
                 < br />
@@ -45,17 +45,26 @@ const Post = React.forwardRef(({ thread, post, backlinks, activePosts, setActive
                     < br />
                 </font>
             </>}
-            { <Renderer thread={ thread } text={ post.message } postId={ post.postId } setActivePosts={ setActivePosts } /> }
+            {   
+                <Renderer
+                    thread={ thread }
+                    post={ post }
+                    text={ post.message }
+                    postId={ post.postId }
+                    setActivePosts={ setActivePosts }
+                    backlinks={ backlinks }
+                /> 
+            }
             <br />
             <br />
-            <div className='replybacklinks'>
-                { backlinks[post.postId] &&
-                    backlinks[post.postId].map(backlink =>
-                        <Backlink key={ uuid() }
-                            thread={ thread }
-                            backlink={ backlink }
-                            setActivePosts={ setActivePosts } />) }
-            </div>
+            { backlinks[post.postId] && <div className='replybacklinks'>
+                { backlinks[post.postId].map(backlink =>
+                    <Backlink key={ uuid() }
+                        thread={ thread }
+                        backlink={ backlink }
+                        setActivePosts={ setActivePosts }
+                        backlinks={ backlinks }  />) }
+            </div>}
         </blockquote>
     </>
 })

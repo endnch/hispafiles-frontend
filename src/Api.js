@@ -1,16 +1,17 @@
 import React, { useEffect } from 'react'
 import { Image } from 'semantic-ui-react'
+import styled from 'styled-components'
 
 import apiLogo from './apiLogo.png'
 import settings from './settings'
 
-const Api = () => {
+const Api = ({ className }) => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
   return (
-    <center>
+    <center className={ className }>
         <Image src={apiLogo} />
         <h1>{ settings.site.title } API</h1>
         <p>De momento, { settings.site.title } como tal no tiene una API definida.</p>
@@ -55,4 +56,6 @@ const Api = () => {
   )
 }
 
-export default Api
+export default styled(Api)`
+  color: ${props => props.theme.fgColor};
+`
