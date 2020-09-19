@@ -1,7 +1,9 @@
 import React from 'react'
-import { Menu, Input, Icon, Image } from 'semantic-ui-react'
+import { Menu, Icon, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+
+import SearchBar from './SearchBar'
 
 import settings from '../settings'
 import topIcon from '../img/top_icn.png'
@@ -15,7 +17,7 @@ const Topbar = ({ className, openSettings }) => {
       </Menu.Item>
       <Menu.Menu position="right">
         <Menu.Item>
-          <Input transparent icon="search" placeholder="Buscar Hilos..." />
+          <SearchBar />
         </Menu.Item>
         <Menu.Item as="a" onClick={openSettings}>
           <Icon name="settings" />
@@ -29,15 +31,5 @@ export default styled(Topbar)`
   background: ${(props) => props.theme.bgAccent} !important;
   .item {
     color: ${(props) => props.theme.fgAccent} !important;
-  }
-  input,
-  input:focus,
-  input:focus::placeholder,
-  i {
-    color: ${(props) => props.theme.fgAccent} !important;
-  }
-  input::placeholder {
-    color: ${(props) => props.theme.fgAccent} !important;
-    opacity: 0.5;
   }
 `

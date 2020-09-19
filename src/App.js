@@ -4,11 +4,13 @@ import styled, { ThemeProvider } from 'styled-components'
 
 import Topbar from './components/Topbar'
 import Footer from './components/Footer'
+import SettingsModal from './components/SettingsModal'
+
 import Api from './pages/Api'
 import AllThreads from './pages/AllThreads'
 import Thread from './pages/Thread'
 import Home from './pages/Home'
-import SettingsModal from './components/SettingsModal'
+import Search from './pages/Search'
 
 import styles from './styles'
 import settings from './settings'
@@ -61,6 +63,9 @@ const App = () => {
           <Switch>
             <Route path="/api">
               <Api />
+            </Route>
+            <Route path="/search/:query/:page?">
+              <Search />
             </Route>
             <Route path="/:board/res/:th">
               <Thread />
