@@ -13,7 +13,7 @@ const Footer = ({ className }) => {
         <br />
         <a href={'mailto:' + settings.misc.email}>Contacto</a>
         {' / '}
-        <a href="https://github.com/HispachanFiles/HispachanFiles">GitHub</a>
+        <a href="https://github.com/endnch/hispafiles-frontend">GitHub</a>
         {settings.features.apiEnabled && (
           <>
             {' / '}
