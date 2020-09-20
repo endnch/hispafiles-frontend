@@ -4,6 +4,7 @@ import { v4 as uuid } from 'uuid'
 import PostMeta from './PostMeta'
 import Renderer from './Renderer'
 import Backlink from './Backlink'
+import Media from './Media'
 
 import settings from '../settings'
 
@@ -32,19 +33,7 @@ const Post = React.forwardRef(
               </span>
             </span>
             <br />
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={`${settings.site.url}/${post.file.url}`}
-            >
-              <span id={`thumb${post.postId}`}>
-                <img
-                  className="thumb"
-                  src={`${settings.site.url}/${post.file.thumb}`}
-                  alt={post.postId}
-                ></img>
-              </span>
-            </a>
+            <Media post={post} />
           </>
         )}
         <span
