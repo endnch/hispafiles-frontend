@@ -1,6 +1,7 @@
 export default {
   site: {
     title: 'Hispachan Files',
+    subtitle: 'Archivo de Hispachan',
     url: 'https://hispafiles.ru',
   },
   features: {

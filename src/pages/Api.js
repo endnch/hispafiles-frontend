@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Image } from 'semantic-ui-react'
 import styled from 'styled-components'
+import { Helmet } from 'react-helmet'
 
 import apiLogo from '../img/apiLogo.png'
 import settings from '../settings'
@@ -12,6 +13,9 @@ const Api = ({ className }) => {
 
   return (
     <center className={className}>
+      <Helmet>
+        <title>API - {settings.site.title}</title>
+      </Helmet>
       <Image src={apiLogo} />
       <h1>{settings.site.title} API</h1>
       <p>De momento, {settings.site.title} como tal no tiene una API definida.</p>

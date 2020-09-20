@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import moment from 'moment'
 import styled from 'styled-components'
+import { Helmet } from 'react-helmet'
 
 import Post from '../components/Post'
 
@@ -66,8 +67,17 @@ const Thread = ({ className }) => {
       </div>
     )
 
+  const title = thread.subject
+    ? thread.subject
+    : thread.message.length <= 50
+    ? thread.message
+    : thread.message.substring(0, 50) + '...'
+
   return (
-    <div id="hispaBox" className={className}>
+    <div className={className}>
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
       <br />
       <hr />
       <div className="replymode">

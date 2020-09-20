@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import styled, { ThemeProvider } from 'styled-components'
+import { Helmet } from 'react-helmet'
 
 import Topbar from './components/Topbar'
 import Footer from './components/Footer'
@@ -50,6 +51,12 @@ const App = () => {
 
   return (
     <ThemeProvider theme={styles[style]}>
+      <Helmet>
+        <title>
+          {settings.site.title} - {settings.site.subtitle}
+        </title>
+      </Helmet>
+
       <SettingsModal
         open={settingsOpen}
         setOpen={setSettingsOpen}

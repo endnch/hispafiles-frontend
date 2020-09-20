@@ -4,6 +4,7 @@ import { useParams, useHistory, Link } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
 import moment from 'moment'
 import styled from 'styled-components'
+import { Helmet } from 'react-helmet'
 
 import NotFound from './NotFound'
 
@@ -50,6 +51,9 @@ const AllThreads = ({ className }) => {
 
   return (
     <Container className={className}>
+      <Helmet>
+        <title>{`/${board}/ - ${boardsMap[board].title} - ${settings.site.title}`}</title>
+      </Helmet>
       <center>
         <h1>{`/${board}/ - ${boardsMap[board].title}`}</h1>
         <Pagination

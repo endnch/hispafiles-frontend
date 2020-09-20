@@ -4,6 +4,7 @@ import { useParams, useHistory, Link } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
 import moment from 'moment'
 import styled from 'styled-components'
+import { Helmet } from 'react-helmet'
 
 import settings from '../settings'
 
@@ -45,6 +46,11 @@ const Search = ({ className }) => {
 
   return (
     <Container className={className}>
+      <Helmet>
+        <title>
+          Resultados de la búqueda: {query} - {settings.site.title}
+        </title>
+      </Helmet>
       <center>
         <h1>{`Resultados de la búsqueda: ${query}`}</h1>
         <Pagination
