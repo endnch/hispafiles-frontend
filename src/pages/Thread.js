@@ -43,6 +43,8 @@ const Thread = ({ className }) => {
 
   useEffect(() => {
     ;(async () => {
+      setLoading(true)
+
       const response = await fetch(
         `${settings.site.url}/api/hispafiles/${board}/res/${threadId}`
       )
@@ -52,7 +54,7 @@ const Thread = ({ className }) => {
       setLoading(false)
       if (post) window.scrollTo(0, ref.current.offsetTop)
     })()
-  }, [])
+  }, [board, threadId])
 
   if (loading)
     return (
