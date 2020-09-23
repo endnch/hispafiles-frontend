@@ -8,7 +8,7 @@ import Post from '../components/Post'
 
 import settings from '../settings'
 
-const Thread = ({ className }) => {
+const Thread = ({ className, relativeTime }) => {
   const { board, th } = useParams()
   const threadId = th.split('.')[0]
   const post = window.location.hash.substring(1)
@@ -93,6 +93,7 @@ const Thread = ({ className }) => {
           activePosts={activePosts}
           setActivePosts={setActivePosts}
           ref={ref}
+          relativeTime={relativeTime}
         />
         {thread.replies &&
           thread.replies.map((post) => (
@@ -116,6 +117,7 @@ const Thread = ({ className }) => {
                       activePosts={activePosts}
                       setActivePosts={setActivePosts}
                       ref={ref}
+                      relativeTime={relativeTime}
                     />
                   </td>
                 </tr>

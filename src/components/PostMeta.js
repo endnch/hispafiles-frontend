@@ -1,7 +1,12 @@
 import React from 'react'
 import moment from 'moment'
 
-const PostMeta = ({ thread, post }) => {
+const PostMeta = ({ thread, post, relativeTime }) => {
+  const date = () =>
+    relativeTime
+      ? moment(post.date).fromNow()
+      : moment(post.date).format('DD/MM/YY HH:mm')
+
   return (
     <>
       <label>
@@ -15,14 +20,9 @@ const PostMeta = ({ thread, post }) => {
             title={post.posterCountryName}
           />
         )}
-        {post.posterName && (
-          <span className="postername">{post.posterName}</span>
-        )}
+        {post.posterName && <span className="postername">{post.posterName}</span>}
         {post.anonId && (
-          <span
-            className="anonid"
-            style={{ backgroundColor: post.anonIdColor }}
-          >
+          <span className="anonid" style={{ backgroundColor: post.anonIdColor }}>
             {post.anonId}
           </span>
         )}
@@ -30,11 +30,8 @@ const PostMeta = ({ thread, post }) => {
         {post.admin && <span className="badge">Admin</span>}
         {post.mod && <span className="badge">Mod</span>}
         {post.guest && <span className="badge">Guest</span>}
-        <span
-          className="timer"
-          title="Hispachan Files siempre muestra la hora local."
-        >
-          {moment(post.date).format('DD/MM/YY HH:mm')}
+        <span className="timer" title="Hispachan Files siempre muestra la hora local.">
+          {date()}
         </span>
       </label>
       <span className="reflink">

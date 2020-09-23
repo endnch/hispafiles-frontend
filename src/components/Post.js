@@ -9,10 +9,12 @@ import Media from './Media'
 import settings from '../settings'
 
 const Post = React.forwardRef(
-  ({ thread, post, backlinks, activePosts, setActivePosts }, ref) => {
+  ({ thread, post, backlinks, activePosts, setActivePosts, relativeTime }, ref) => {
     return (
       <>
-        {thread.postId !== post.postId && <PostMeta thread={thread} post={post} />}
+        {thread.postId !== post.postId && (
+          <PostMeta thread={thread} post={post} relativeTime={relativeTime} />
+        )}
         {post.file && (
           <>
             <span className="filesize">
@@ -41,7 +43,9 @@ const Post = React.forwardRef(
           style={{ position: 'relative', bottom: '128px', display: 'block' }}
           ref={activePosts[post.postId] ? ref : undefined}
         ></span>
-        {thread.postId === post.postId && <PostMeta thread={thread} post={post} />}
+        {thread.postId === post.postId && (
+          <PostMeta thread={thread} post={post} relativeTime={relativeTime} />
+        )}
         <blockquote style={{ wordWrap: 'break-word' }}>
           {post.dado && (
             <>
@@ -71,6 +75,7 @@ const Post = React.forwardRef(
               postId={post.postId}
               setActivePosts={setActivePosts}
               backlinks={backlinks}
+              relativeTime={relativeTime}
             />
           }
           <br />
@@ -84,6 +89,7 @@ const Post = React.forwardRef(
                   backlink={backlink}
                   setActivePosts={setActivePosts}
                   backlinks={backlinks}
+                  relativeTime={relativeTime}
                 />
               ))}
             </div>

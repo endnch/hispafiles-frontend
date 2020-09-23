@@ -34,6 +34,12 @@ const App = () => {
   const [style, setStyle] = useState(
     localStorage.getItem('style') || settings.defaultStyle
   )
+  const initialRelTime =
+    localStorage.getItem('relativeTime')
+      ? JSON.parse(localStorage.getItem('relativeTime'))
+      : settings.relativeTime
+
+  const [relativeTime, setRelativeTime] = useState(initialRelTime)
   const [settingsOpen, setSettingsOpen] = useState(false)
 
   const openSettings = () => {
@@ -62,6 +68,8 @@ const App = () => {
         setOpen={setSettingsOpen}
         style={style}
         changeStyle={changeStyle}
+        relativeTime={relativeTime}
+        setRelativeTime={setRelativeTime}
       />
 
       <Router>
@@ -75,7 +83,7 @@ const App = () => {
               <Search />
             </Route>
             <Route path="/:board/res/:th">
-              <Thread />
+              <Thread relativeTime={relativeTime} />
             </Route>
             <Route path="/:board/:page?">
               <AllThreads />

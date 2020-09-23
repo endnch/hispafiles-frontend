@@ -1,9 +1,16 @@
 import React from 'react'
-import { Modal, TransitionablePortal, Form } from 'semantic-ui-react'
+import { Modal, TransitionablePortal, Form, Checkbox } from 'semantic-ui-react'
 
 import styles from '../styles'
 
-const SettingsModal = ({ open, setOpen, style, changeStyle }) => {
+const SettingsModal = ({
+  open,
+  setOpen,
+  style,
+  changeStyle,
+  relativeTime,
+  setRelativeTime,
+}) => {
   const closeModal = () => {
     setOpen(false)
   }
@@ -15,6 +22,11 @@ const SettingsModal = ({ open, setOpen, style, changeStyle }) => {
   const handleChange = (e, data) => {
     changeStyle(data.value)
     localStorage.setItem('style', data.value)
+  }
+
+  const handleCheckBoxChange = (e, data) => {
+    setRelativeTime(data.checked)
+    localStorage.setItem('relativeTime', data.checked)
   }
 
   const options = Object.keys(styles).map((key) => ({
@@ -37,6 +49,11 @@ const SettingsModal = ({ open, setOpen, style, changeStyle }) => {
               options={options}
               onChange={handleChange}
             ></Form.Dropdown>
+            <Checkbox
+              label="Usar fechas relativas"
+              checked={relativeTime}
+              onChange={handleCheckBoxChange}
+            />
           </Form>
         </Modal.Content>
       </Modal>

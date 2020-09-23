@@ -27,4 +27,6 @@ export default {
   },
   /* Estilo por defecto (los estilos están en la carpeta styles) */
   defaultStyle: 'Hispachan',
+  /* Establecer en true para que las fechas sean relativas. Ej: hace una hora */
+  relativeTime: true,
 }
