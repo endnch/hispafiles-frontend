@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import styled, { ThemeProvider } from 'styled-components'
 import { Helmet } from 'react-helmet'
+import { useSelector } from 'react-redux'
+
+import { selectStyle } from './features/settings/settingsSlice'
 
 import Topbar from './components/Topbar'
 import Footer from './components/Footer'
@@ -31,24 +34,11 @@ const MainContent = styled.div`
 `
 
 const App = () => {
-  const [style, setStyle] = useState(
-    localStorage.getItem('style') || settings.defaultStyle
-  )
-  const initialRelTime =
-    localStorage.getItem('relativeTime')
-      ? JSON.parse(localStorage.getItem('relativeTime'))
-      : settings.relativeTime
-
-  const [relativeTime, setRelativeTime] = useState(initialRelTime)
+  const style = useSelector(selectStyle)
   const [settingsOpen, setSettingsOpen] = useState(false)
 
   const openSettings = () => {
     setSettingsOpen(true)
-  }
-
-  const changeStyle = (style) => {
-    document.body.style.background = styles[style].bgColor
-    setStyle(style)
   }
 
   useEffect(() => {
@@ -63,14 +53,7 @@ const App = () => {
         </title>
       </Helmet>
 
-      <SettingsModal
-        open={settingsOpen}
-        setOpen={setSettingsOpen}
-        style={style}
-        changeStyle={changeStyle}
-        relativeTime={relativeTime}
-        setRelativeTime={setRelativeTime}
-      />
+      <SettingsModal open={settingsOpen} setOpen={setSettingsOpen} />
 
       <Router>
         <Topbar openSettings={openSettings} />
@@ -83,7 +66,7 @@ const App = () => {
               <Search />
             </Route>
             <Route path="/:board/res/:th">
-              <Thread relativeTime={relativeTime} />
+              <Thread />
             </Route>
             <Route path="/:board/:page?">
               <AllThreads />

@@ -9,7 +9,7 @@ import PostMeta from './PostMeta'
 import renderUtility from './utils/renderUtility'
 import settings from '../settings'
 
-const PostContent = ({ thread, backlink, backlinks, relativeTime }) => {
+const PostContent = ({ thread, backlink, backlinks }) => {
   const post = thread.replies.find((reply) => {
     return reply.postId === parseInt(backlink)
   })
@@ -21,7 +21,7 @@ const PostContent = ({ thread, backlink, backlinks, relativeTime }) => {
 
   return (
     <>
-      <PostMeta thread={thread} post={post} relativeTime={relativeTime} />
+      <PostMeta thread={thread} post={post} />
       {post.file && (
         <>
           <span className="filesize">
@@ -154,7 +154,7 @@ const StyledPopup = styled(Popup)`
   }
 `
 
-const Backlink = ({ thread, backlink, setActivePosts, backlinks, relativeTime }) => {
+const Backlink = ({ thread, backlink, setActivePosts, backlinks }) => {
   const trigger = (
     <a
       href={`#${backlink}`}
@@ -171,12 +171,7 @@ const Backlink = ({ thread, backlink, setActivePosts, backlinks, relativeTime })
       pinned
       trigger={trigger}
     >
-      <PostContent
-        thread={thread}
-        backlink={backlink}
-        backlinks={backlinks}
-        relativeTime={relativeTime}
-      />
+      <PostContent thread={thread} backlink={backlink} backlinks={backlinks} />
     </StyledPopup>
   )
 }

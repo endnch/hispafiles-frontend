@@ -1,16 +1,21 @@
 import React from 'react'
 import { Modal, TransitionablePortal, Form, Checkbox } from 'semantic-ui-react'
+import { useDispatch, useSelector } from 'react-redux'
+
+import {
+  changeStyle,
+  selectStyle,
+  changeRelativeTime,
+  selectRelativeTime,
+} from '../features/settings/settingsSlice'
 
 import styles from '../styles'
 
-const SettingsModal = ({
-  open,
-  setOpen,
-  style,
-  changeStyle,
-  relativeTime,
-  setRelativeTime,
-}) => {
+const SettingsModal = ({ open, setOpen }) => {
+  const dispatch = useDispatch()
+  const relativeTime = useSelector(selectRelativeTime)
+  const style = useSelector(selectStyle)
+
   const closeModal = () => {
     setOpen(false)
   }
@@ -20,12 +25,11 @@ const SettingsModal = ({
   }
 
   const handleChange = (e, data) => {
-    changeStyle(data.value)
-    localStorage.setItem('style', data.value)
+    dispatch(changeStyle(data.value))
   }
 
   const handleCheckBoxChange = (e, data) => {
-    setRelativeTime(data.checked)
+    dispatch(changeRelativeTime(data.checked))
     localStorage.setItem('relativeTime', data.checked)
   }
 

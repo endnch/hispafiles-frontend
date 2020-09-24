@@ -10,7 +10,7 @@ import Backlink from './Backlink'
 
 import renderUtility from './utils/renderUtility'
 
-const Renderer = ({ thread, text, setActivePosts, backlinks, relativeTime }) => {
+const Renderer = ({ thread, text, setActivePosts, backlinks }) => {
   if (text.length === 0) return <></>
 
   const htmlToReactParser = new HtmlToReactParser()
@@ -28,7 +28,6 @@ const Renderer = ({ thread, text, setActivePosts, backlinks, relativeTime }) => 
             backlink={node.attribs['data-ref']}
             setActivePosts={setActivePosts}
             backlinks={backlinks}
-            relativeTime={relativeTime}
           />
         )
       },

@@ -1,7 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import moment from 'moment'
+import { Provider } from 'react-redux'
+
 import App from './App'
+import store from './app/store'
+
 import 'semantic-ui-css/semantic.min.css'
 import 'lightbox-react/style.css'
 
@@ -25,7 +29,9 @@ moment.locale('es', {
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 )

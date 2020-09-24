@@ -1,7 +1,12 @@
 import React from 'react'
 import moment from 'moment'
+import { useSelector } from 'react-redux'
 
-const PostMeta = ({ thread, post, relativeTime }) => {
+import { selectRelativeTime } from '../features/settings/settingsSlice'
+
+const PostMeta = ({ thread, post }) => {
+  const relativeTime = useSelector(selectRelativeTime)
+
   const date = () =>
     relativeTime
       ? moment(post.date).fromNow()
