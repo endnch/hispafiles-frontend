@@ -1,6 +1,6 @@
 export default {
   bgColor: '#F2F4FF',
-  fgCcolor: '#000000',
+  fgColor: '#000000',
   bgAccent: '#5E5E97',
   fgAccent: '#FFFFFF',
   linkColor: '#505081',
