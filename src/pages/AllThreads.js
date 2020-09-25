@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Item, Icon, Pagination } from 'semantic-ui-react'
+
+import { Container, Icon } from 'semantic-ui-react'
 import { useParams, useHistory, Link } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
 import moment from 'moment'
-import styled from 'styled-components'
 import { Helmet } from 'react-helmet'
 
 import NotFound from './NotFound'
+import Loading from '../components/Loading'
+import Pagination from '../components/Pagination'
+import Item from '../components/Item'
 
 import { allowList, boardsMap } from '../boards'
 import settings from '../settings'
 
-const AllThreads = ({ className }) => {
+const AllThreads = () => {
   const board = useParams().board
   const page = parseInt(useParams().page) || 1
   const [threads, setThreads] = useState([])
@@ -32,6 +35,7 @@ const AllThreads = ({ className }) => {
   }, [page, board])
 
   const handlePaginationChange = (e, { activePage }) => {
+    setLoading(true)
     history.push(`/${board}/${activePage}`)
   }
 
@@ -39,18 +43,12 @@ const AllThreads = ({ className }) => {
     return <NotFound />
   }
 
-  if (loading)
-    return (
-      <div>
-        <br />
-        <center>
-          <h1>(...)</h1>
-        </center>
-      </div>
-    )
+  if (loading) {
+    return <Loading />
+  }
 
   return (
-    <Container className={className}>
+    <Container>
       <Helmet>
         <title>{`/${board}/ - ${boardsMap[board].title} - ${settings.site.title}`}</title>
       </Helmet>
@@ -100,37 +98,4 @@ const AllThreads = ({ className }) => {
   )
 }
 
-export default styled(AllThreads)`
-  .ui.items > .item .meta,
-  .ui.items > .item > .content > .header,
-  .ui.items > .item > .content > .description {
-    color: ${(props) => props.theme.fgColor};
-  }
-
-  .ui.items a.item:hover .content .header {
-    color: ${(props) => props.theme.linkHover};
-  }
-
-  /* Paginación */
-  .ui.pagination.pointing.secondary.menu {
-    background-color: ${(props) => props.theme.bgAccent};
-
-    a.item,
-    a.item:hover {
-      color: ${(props) => props.theme.fgAccent};
-    }
-
-    a.item:hover {
-      background: rgba(0, 0, 0, 0.03);
-    }
-
-    .active.item {
-      border-color: ${(props) => props.theme.fgAccent};
-    }
-  }
-  /* Paginación */
-
-  .wait.icon {
-    margin-right: 0.3em;
-  }
-`
+export default AllThreads

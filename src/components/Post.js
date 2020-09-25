@@ -23,11 +23,9 @@ const Post = React.forwardRef(
               >
                 {post.file.url.split('/').reverse()[0]}
               </a>
-              <span style={{ fontSize: '85%' }}>
+              <span>
                 ({post.file.size}
-                {post.file.resolution && (
-                  <span className="moculto">, {post.file.resolution}</span>
-                )}
+                {post.file.resolution && <span>, {post.file.resolution}</span>}
                 {post.file.name && <span className="nombrefile">, {post.file.name}</span>}
                 )
               </span>

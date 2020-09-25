@@ -1,14 +1,19 @@
-import React, { useEffect, useState } from 'react'
-import { Container, Item, Icon, Pagination } from 'semantic-ui-react'
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
+
+import { useEffect, useState } from 'react'
+import { Container, Icon } from 'semantic-ui-react'
 import { useParams, useHistory, Link } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
 import moment from 'moment'
-import styled from 'styled-components'
 import { Helmet } from 'react-helmet'
+
+import Pagination from '../components/Pagination'
+import Item from '../components/Item'
 
 import settings from '../settings'
 
-const Search = ({ className }) => {
+const Search = () => {
   const query = useParams().query
   const page = parseInt(useParams().page) || 1
   const [threads, setThreads] = useState([])
@@ -45,7 +50,7 @@ const Search = ({ className }) => {
     )
 
   return (
-    <Container className={className}>
+    <Container>
       <Helmet>
         <title>
           Resultados de la búqueda: {query} - {settings.site.title}
@@ -97,37 +102,4 @@ const Search = ({ className }) => {
   )
 }
 
-export default styled(Search)`
-  .ui.items > .item .meta,
-  .ui.items > .item > .content > .header,
-  .ui.items > .item > .content > .description {
-    color: ${(props) => props.theme.fgColor};
-  }
-
-  .ui.items a.item:hover .content .header {
-    color: ${(props) => props.theme.linkHover};
-  }
-
-  /* Paginación */
-  .ui.pagination.pointing.secondary.menu {
-    background-color: ${(props) => props.theme.bgAccent};
-
-    a.item,
-    a.item:hover {
-      color: ${(props) => props.theme.fgAccent};
-    }
-
-    a.item:hover {
-      background: rgba(0, 0, 0, 0.03);
-    }
-
-    .active.item {
-      border-color: ${(props) => props.theme.fgAccent};
-    }
-  }
-  /* Paginación */
-
-  .wait.icon {
-    margin-right: 0.3em;
-  }
-`
+export default Search

@@ -1,11 +1,11 @@
 import React from 'react'
-import settings from '../settings'
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
 
-const Footer = ({ className }) => {
+import settings from '../settings'
+
+const Footer = () => {
   return (
-    <div className={className}>
+    <div style={{ paddingTop: '2em', paddingBottom: '2em' }}>
       <center>
         Hispachan Files es un proyecto no-oficial y es completamente ajeno a la
         administración de <a href="https://www.hispachan.org/">hispachan.org</a>
@@ -25,14 +25,4 @@ const Footer = ({ className }) => {
   )
 }
 
-export default styled(Footer)`
-  padding-top: 2em;
-  padding-bottom: 2em;
-  color: ${(props) => props.theme.fgColor};
-  a {
-    color: ${(props) => props.theme.linkColor};
-  }
-  a:hover {
-    color: ${(props) => props.theme.linkHover};
-  }
-`
+export default Footer

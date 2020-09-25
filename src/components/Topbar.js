@@ -1,16 +1,17 @@
 import React from 'react'
-import { Menu, Icon, Image } from 'semantic-ui-react'
+
+import { Icon, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
 
 import SearchBar from './SearchBar'
+import Menu from './Menu'
 
 import settings from '../settings'
 import topIcon from '../img/top_icn.png'
 
-const Topbar = ({ className, openSettings }) => {
+const Topbar = ({ openSettings }) => {
   return (
-    <Menu className={className} fixed="top">
+    <Menu>
       <Menu.Item as={Link} to="/">
         <Image src={topIcon} />
         {settings.site.title}
@@ -27,9 +28,4 @@ const Topbar = ({ className, openSettings }) => {
   )
 }
 
-export default styled(Topbar)`
-  background: ${(props) => props.theme.bgAccent} !important;
-  .item {
-    color: ${(props) => props.theme.fgAccent} !important;
-  }
-`
+export default Topbar

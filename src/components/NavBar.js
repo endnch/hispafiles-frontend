@@ -1,12 +1,21 @@
+/** @jsx jsx */
 import React from 'react'
+import { jsx } from '@emotion/core'
+
 import { Segment } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
 
 import { boards } from '../boards'
+import makeImportant from './utils/makeImportant'
 
-const NavBar = ({ className }) => (
-  <Segment className={className}>
+const style = (theme) => ({
+  background: makeImportant(theme.pbBackground),
+  color: makeImportant(theme.fgColor),
+  marginTop: makeImportant('40px'),
+})
+
+const NavBar = () => (
+  <Segment css={style}>
     {boards.map((group, index) => (
       <React.Fragment key={index}>
         [{' '}
@@ -24,7 +33,4 @@ const NavBar = ({ className }) => (
   </Segment>
 )
 
-export default styled(NavBar)`
-  color: ${(props) => props.theme.fgColor} !important;
-  background: ${(props) => props.theme.pbBackground} !important;
-`
+export default NavBar

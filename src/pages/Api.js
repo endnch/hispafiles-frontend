@@ -1,18 +1,17 @@
 import React, { useEffect } from 'react'
 import { Image } from 'semantic-ui-react'
-import styled from 'styled-components'
 import { Helmet } from 'react-helmet'
 
 import apiLogo from '../img/apiLogo.png'
 import settings from '../settings'
 
-const Api = ({ className }) => {
+const Api = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
   return (
-    <center className={className}>
+    <center>
       <Helmet>
         <title>API - {settings.site.title}</title>
       </Helmet>
@@ -83,6 +82,4 @@ const Api = ({ className }) => {
   )
 }
 
-export default styled(Api)`
-  color: ${(props) => props.theme.fgColor};
-`
+export default Api

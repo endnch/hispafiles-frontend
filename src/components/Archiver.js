@@ -1,18 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { Input, Segment, Progress, Grid, Image, Icon, Button } from 'semantic-ui-react'
+import { Input, Segment, Grid, Image, Icon, Button } from 'semantic-ui-react'
 import io from 'socket.io-client'
 import urlParse from 'url-parse'
-import styled from 'styled-components'
 
 import CopyButton from './CopyButton'
+import Progress from './Progress'
 
 import settings from '../settings'
-
-const HispaProgress = styled(Progress)`
-  .label {
-    color: ${(props) => props.theme.fgColor} !important;
-  }
-`
 
 const Archiver = () => {
   const socket = useRef(null)
@@ -108,15 +102,15 @@ const Archiver = () => {
       />
       <div>
         {showProgress && (
-          <HispaProgress indicating={indicating} success={done} percent={progress}>
+          <Progress indicating={indicating} success={done} percent={progress}>
             {label}
-          </HispaProgress>
+          </Progress>
         )}
         {showThread && (
-          <Segment>
+          <Segment style={{ color: 'rgba(0,0,0,.87' }}>
             <Grid>
               <Grid.Column width="3">
-                <Image src={`${thread.file.thumb}`} />
+                <Image src={thread.file.thumb} />
               </Grid.Column>
               <Grid.Column width="13">
                 <h2>{thread.subject || thread.url}</h2>
