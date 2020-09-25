@@ -12,7 +12,7 @@ import Footer from './components/Footer'
 import SettingsModal from './components/SettingsModal'
 
 import Api from './pages/Api'
-import AllThreads from './pages/AllThreads'
+import Board from './pages/Board'
 import Thread from './pages/Thread'
 import Home from './pages/Home'
 import Search from './pages/Search'
@@ -68,7 +68,7 @@ const App = () => {
             <Thread />
           </Route>
           <Route path="/:board/:page?">
-            <AllThreads />
+            <Board />
           </Route>
           <Route exact path="/">
             <Home />

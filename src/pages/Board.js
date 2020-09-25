@@ -14,7 +14,7 @@ import Item from '../components/Item'
 import { allowList, boardsMap } from '../boards'
 import settings from '../settings'
 
-const AllThreads = () => {
+const Board = () => {
   const board = useParams().board
   const page = parseInt(useParams().page) || 1
   const [threads, setThreads] = useState([])
@@ -98,4 +98,4 @@ const AllThreads = () => {
   )
 }
 
-export default AllThreads
+export default Board
