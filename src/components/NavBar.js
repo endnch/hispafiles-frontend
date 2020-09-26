@@ -11,7 +11,6 @@ import makeImportant from './utils/makeImportant'
 const style = (theme) => ({
   background: makeImportant(theme.pbBackground),
   color: makeImportant(theme.fgColor),
-  marginTop: makeImportant('40px'),
 })
 
 const NavBar = () => (

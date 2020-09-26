@@ -1,9 +1,22 @@
-import React, { useReducer, useCallback } from 'react'
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
+import { useReducer, useCallback } from 'react'
+
 import { Search } from 'semantic-ui-react'
 import { useHistory } from 'react-router-dom'
 import debounce from 'lodash.debounce'
 
+import makeImportant from './utils/makeImportant'
 import settings from '../settings'
+
+const style = (theme) => ({
+  background: makeImportant(theme.bgAccent),
+  marginBottom: '40px',
+  padding: '5px',
+  input: {
+    borderRadius: makeImportant('.28571429rem'),
+  },
+})
 
 const initialState = {
   loading: false,
@@ -87,18 +100,21 @@ const SearchBar = () => {
   }
 
   return (
-    <Search
-      size="mini"
-      icon="search"
-      placeholder="Buscar Hilos..."
-      noResultsMessage="No hay resultados"
-      loading={loading}
-      results={results}
-      value={value}
-      showNoResults={false}
-      onSearchChange={handleSearchChange}
-      onResultSelect={handleResultSelect}
-    />
+    <div css={style}>
+      <Search
+        fluid
+        input={{ fluid: true }}
+        icon="search"
+        placeholder="Buscar Hilos..."
+        noResultsMessage="No hay resultados"
+        loading={loading}
+        results={results}
+        value={value}
+        showNoResults={false}
+        onSearchChange={handleSearchChange}
+        onResultSelect={handleResultSelect}
+      />
+    </div>
   )
 }
 

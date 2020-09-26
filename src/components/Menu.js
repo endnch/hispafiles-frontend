@@ -6,6 +6,8 @@ import makeImportant from './utils/makeImportant'
 const style = {
   menu: ({ theme }) => ({
     background: makeImportant(theme.bgAccent),
+    borderRadius: makeImportant(0),
+    marginBottom: makeImportant(0),
   }),
   item: ({ theme }) => ({
     color: makeImportant(theme.fgAccent),
